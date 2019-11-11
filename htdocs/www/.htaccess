@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+PassengerAppRoot /home/host1730430/sveltejs.ru/nodejs_app/www
+PassengerAppType node
+PassengerStartupFile app.js
+PassengerNodejs /home/host1730430/sveltejs.ru/node/bin/node
+PassengerRestartDir /home/host1730430/sveltejs.ru/nodejs_tmp/www
+PassengerFriendlyErrorPages on
